@@ -1,0 +1,2 @@
+#define HBSUBSET_API __declspec(dllexport)
+#define HBSUBSET_API __declspec(dllimport)

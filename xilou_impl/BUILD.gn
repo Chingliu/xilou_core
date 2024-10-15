@@ -1,0 +1,74 @@
+# Copyright 2018 The PDFium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//build/config/freetype/freetype.gni")
+import("../pdfium.gni")
+
+config("fxge_warnings") {
+  visibility = [ ":*" ]
+  if (is_clang) {
+    cflags = [
+      # http://code.google.com/p/pdfium/issues/detail?id=188
+      "-Wno-switch",
+    ]
+  }
+}
+
+source_set("xilou_impl") {
+  sources = [
+    "xilou_impl.h",
+    "xilou_signature_iface.h",
+    "xilou_view.cpp",
+    "xilou_image_png.h",
+    "xilou_image_png.cpp",
+    "xilou_bitmap_saver.h",
+    "xilou_bitmap_saver.cpp",
+    "xilou_convert.cpp",
+    "xilou_pdfconvert.cpp",
+    "xilou_convert2txt.cpp",
+    "xilou_xmlpackage.h",
+    "xilou_xmlpackage.cpp",
+    "xilou_xmldocument.h",
+    "xilou_xmldocument.cpp",
+    "xilou_xmlpage.h",
+    "xilou_xmlpage.cpp",
+    "xilou_xmlpathobj.h",
+    "xilou_xmlpathobj.cpp",
+    "xilou_xmltextobj.h",
+    "xilou_xmltextobj.cpp",
+    "xilou_xmlimageobj.h",
+    "xilou_xmlimageobj.cpp",
+    "xilou_xmlres.h",
+    "xilou_xmlres.cpp",
+    "xilou_signature.h",
+    "xilou_signature.cpp",
+    "xilou_logger.cpp",
+    "xilou_ofdmerge.h",
+    "xilou_ofdmerge.cpp",
+  ]
+
+  configs += [
+    ":fxge_warnings",
+    "../:pdfium_strict_config",
+  ]
+
+  deps = ["../:pdfium_public_headers", 
+            "../core/fxcrt",
+            "../fpdfsdk",
+            "../core/fxcodec",
+            "../xfa/fxfa",
+            "../fxjs",
+            "../fxjs:gc",
+            "../third_party:pdfium_base" ,
+            "../ofd"
+  ]
+
+  if (is_component_build || use_system_freetype) {
+    # ft_adobe_glyph_list is not exported from the Freetype shared library so we
+    # need it defined in component builds and builds using system freetype.
+    defines = [ "DEFINE_PS_TABLES_DATA" ]
+  }
+
+  visibility = [ "../*" ]
+}

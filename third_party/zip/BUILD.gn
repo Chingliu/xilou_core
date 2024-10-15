@@ -1,0 +1,17 @@
+# Copyright 2018 The PDFium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+
+source_set("kuba_zlib") {
+  sources = [
+    "src/miniz.h",
+    "src/zip.h",
+    "src/zip.c"
+  ]
+  defines = ["ZIP_ENABLE_SHARABLE_FILE_OPEN"]
+  deps = []
+  include_dirs = [ "src/" ]
+  visibility = [ "../../*" ]
+  configs += [ "//build/config/compiler:no_chromium_code" ]
+}

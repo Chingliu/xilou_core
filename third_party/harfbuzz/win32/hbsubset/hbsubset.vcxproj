@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{724B4DA0-12E6-452D-860A-FC1F76F36397}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>hbsubset</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>hbsubset</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)../../</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>HBSUBSET</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>hbsubset</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)../../</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>HBSUBSET</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;HBSUBSET_EXPORTS;_WINDOWS;_USRDLL;HAVE_OT;HB_NO_MT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)../../src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;HBSUBSET_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;HBSUBSET_EXPORTS;_WINDOWS;_USRDLL;HAVE_OT;HB_NO_MT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)../../src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;HBSUBSET_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\hbsubset.h" />
+    <ClInclude Include="..\..\src\hb-aat-layout.h" />
+    <ClInclude Include="..\..\src\hb-blob.h" />
+    <ClInclude Include="..\..\src\hb-buffer.h" />
+    <ClInclude Include="..\..\src\hb-common.h" />
+    <ClInclude Include="..\..\src\hb-deprecated.h" />
+    <ClInclude Include="..\..\src\hb-face.h" />
+    <ClInclude Include="..\..\src\hb-font.h" />
+    <ClInclude Include="..\..\src\hb-map.h" />
+    <ClInclude Include="..\..\src\hb-number.hh" />
+    <ClInclude Include="..\..\src\hb-ot-cff1-table.hh" />
+    <ClInclude Include="..\..\src\hb-ot-face.hh" />
+    <ClInclude Include="..\..\src\hb-ot-font.h" />
+    <ClInclude Include="..\..\src\hb-ot-metrics.h" />
+    <ClInclude Include="..\..\src\hb-ot-shape-complex-khmer.hh" />
+    <ClInclude Include="..\..\src\hb-ot-shape-complex-syllabic.hh" />
+    <ClInclude Include="..\..\src\hb-ot-shape-complex-vowel-constraints.hh" />
+    <ClInclude Include="..\..\src\hb-ot-shape-complex.hh" />
+    <ClInclude Include="..\..\src\hb-ot-var.h" />
+    <ClInclude Include="..\..\src\hb-set.h" />
+    <ClInclude Include="..\..\src\hb-shape-plan.h" />
+    <ClInclude Include="..\..\src\hb-shape.h" />
+    <ClInclude Include="..\..\src\hb-subset-cff-common.hh" />
+    <ClInclude Include="..\..\src\hb-subset-cff1.hh" />
+    <ClInclude Include="..\..\src\hb-subset-cff2.hh" />
+    <ClInclude Include="..\..\src\hb-subset.h" />
+    <ClInclude Include="..\..\src\hb-unicode-private.hh" />
+    <ClInclude Include="..\..\src\hb-unicode.hh" />
+    <ClInclude Include="..\..\src\hb-version.h" />
+    <ClInclude Include="..\..\src\hb.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\hb-aat-layout.cc" />
+    <ClCompile Include="..\..\src\hb-aat-map.cc" />
+    <ClCompile Include="..\..\src\hb-blob.cc" />
+    <ClCompile Include="..\..\src\hb-buffer-serialize.cc" />
+    <ClCompile Include="..\..\src\hb-buffer.cc" />
+    <ClCompile Include="..\..\src\hb-common.cc" />
+    <ClCompile Include="..\..\src\hb-face.cc" />
+    <ClCompile Include="..\..\src\hb-fallback-shape.cc" />
+    <ClCompile Include="..\..\src\hb-font.cc" />
+    <ClCompile Include="..\..\src\hb-map.cc" />
+    <ClCompile Include="..\..\src\hb-number.cc" />
+    <ClCompile Include="..\..\src\hb-ot-cff1-table.cc" />
+    <ClCompile Include="..\..\src\hb-ot-cff2-table.cc" />
+    <ClCompile Include="..\..\src\hb-ot-face.cc" />
+    <ClCompile Include="..\..\src\hb-ot-font.cc" />
+    <ClCompile Include="..\..\src\hb-ot-layout.cc" />
+    <ClCompile Include="..\..\src\hb-ot-map.cc" />
+    <ClCompile Include="..\..\src\hb-ot-metrics.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-arabic.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-default.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-hangul.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-hebrew.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-indic-table.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-indic.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-khmer.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-myanmar.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-syllabic.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-thai.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-use-table.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-use.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-complex-vowel-constraints.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-fallback.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape-normalize.cc" />
+    <ClCompile Include="..\..\src\hb-ot-shape.cc" />
+    <ClCompile Include="..\..\src\hb-ot-tag.cc" />
+    <ClCompile Include="..\..\src\hb-ot-var.cc" />
+    <ClCompile Include="..\..\src\hb-set.cc" />
+    <ClCompile Include="..\..\src\hb-shape-plan.cc" />
+    <ClCompile Include="..\..\src\hb-shape.cc" />
+    <ClCompile Include="..\..\src\hb-shaper.cc" />
+    <ClCompile Include="..\..\src\hb-subset-cff-common.cc" />
+    <ClCompile Include="..\..\src\hb-subset-cff1.cc" />
+    <ClCompile Include="..\..\src\hb-subset-cff2.cc" />
+    <ClCompile Include="..\..\src\hb-subset-input.cc" />
+    <ClCompile Include="..\..\src\hb-subset-plan.cc" />
+    <ClCompile Include="..\..\src\hb-subset.cc" />
+    <ClCompile Include="..\..\src\hb-ucd.cc" />
+    <ClCompile Include="..\..\src\hb-ucdn.cc" />
+    <ClCompile Include="..\..\src\hb-unicode.cc" />
+    <ClCompile Include="..\..\src\hb-warning.cc" />
+    <ClCompile Include="..\..\src\ucdn.c" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="hbsubset.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
